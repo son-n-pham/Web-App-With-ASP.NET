@@ -20,3 +20,9 @@ There is a "dot net" confusion (Or at least to me ^^) with the big list of .NET,
 - .NET Core is the new, cross-platform version running on Windows, MacOS and Linux. Microsoft plans to rename .NET Core to .NET
 
 ### How to get .NET
+There are 2 main ways:
+- Download **Visual Studio**, which is an Integrated Development Environment (IDE). The IDE comes with .NET platform, a code editor and additional tools to write code
+- Download **.NET SDK** (Software Development Kit), which comes with .NET platform without IDE. The SDK is accessed via a Command-Line Interface (CLI)
+
+### What about ASP.NET
+ASP.NET is the framework on top of .NET platform to build Web App.
