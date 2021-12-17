@@ -44,7 +44,13 @@ There are 2 type of conversion:
   - requires a cast operator:
     ```C#
     double myDouble = 3.2;
-    // Round myDouble to the nearest whole number
+    // Round myDouble to the nearest whole number by a cast operator
     int myInt = (int)myDouble;
+    ```
+  - or use built-in method Convert.ToX()
+    ```C#
+    double myDouble = 3.2;
+    // Round myDouble to the near whole number by a built-in method
+    int myInt = System.Convert.ToInt32(myDouble);
     ```
 
