@@ -31,9 +31,20 @@ ASP.NET is the framework on top of .NET platform to build Web App.
 
 ### Data Types and Variables
 
-Built-in data types:
+#### Built-in data types:
 
 ![image](https://user-images.githubusercontent.com/79841341/146522415-aa0acbfb-9a3e-4bea-ae09-5e7fb30ab86b.png)
 
+#### Type conversion:
+When converting data type, C# check to ensure that we do not lose any data. Therfore, it is automatically convert from int to double, but we will get error to convert from double to int. To avoid such error, we need to have a cast operator.
 
+There are 2 type of conversion:
+- Implicit conversion: Happens automatically
+- Explicit conversion: 
+  - requires a cast operator:
+    ```C#
+    double myDouble = 3.2;
+    // Round myDouble to the nearest whole number
+    int myInt = (int)myDouble;
+    ```
 
