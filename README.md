@@ -29,6 +29,11 @@ ASP.NET is the framework on top of .NET platform to build Web App.
 
 ## C\#
 
-###Data Types and Variables
+### Data Types and Variables
+
+Built-in data types:
+
+![image](https://user-images.githubusercontent.com/79841341/146522415-aa0acbfb-9a3e-4bea-ae09-5e7fb30ab86b.png)
+
 
 
