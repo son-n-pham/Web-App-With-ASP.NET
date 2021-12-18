@@ -187,6 +187,8 @@ static bool isTen(int n) {
 Array.Exists(numbers, isTen);
  
 // Lambda expression is used to replace isTen method
+// Typical syntax
+// (input-parameters) => { <statements> }
 Array.Exists(numbers, (int n) => {
   return n == 10;
 });
@@ -205,5 +207,4 @@ Array.Exists(number, n => n==10);
 
 
  
-// Typical syntax
-// (input-parameters) => { <statements> }
+
