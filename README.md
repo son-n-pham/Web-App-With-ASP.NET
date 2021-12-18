@@ -145,6 +145,7 @@ namespace OutErrors
 /* out keyword is used when define Whisper method
 The result parameter wasWhispercalled of out is assigned a value inside method
 The method Whipser also return a string by its return statement
+When calling Whisper method, ie. in Main(), we need to remember to use the *out* keyword
 
 Result of this program:
 garrrr
