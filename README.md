@@ -130,7 +130,7 @@ namespace OutErrors
     {
       string statement = "GARRRR";
       bool marker;
-			string murmur = Whisper(statement, out marker);
+      string murmur = Whisper(statement, out marker);
       Console.WriteLine(murmur);
       Console.WriteLine(marker);
     }  
