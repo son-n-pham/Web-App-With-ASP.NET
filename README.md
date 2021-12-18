@@ -78,3 +78,39 @@ Method Overloading:
 - Methods can have the same name, which each of them is called *overload*.
 - Overloads have either different parameter types or differnt number of parameters, and they behave differently.
 - This is useful when we want the same method behaves differently based on its inputs.
+- Example:
+  ```C#
+  using System;
+
+  namespace MethodOverloading
+  {
+    class Program
+    {
+      static void Main(string[] args)
+      {
+        NamePets("Laika", "Albert");
+        NamePets("Mango", "Puddy", "Bucket");
+        NamePets();
+      }
+
+      static void NamePets(string firstPet="Laikaaaa", string secondPet="Albertttt")
+      {
+        Console.WriteLine($"Your pets {firstPet} and {secondPet} will be joining your voyage across space!");
+      }
+
+      static void NamePets(string firstPet, string secondPet, string thirdPet)
+      {
+        Console.WriteLine($"Your pets {firstPet}, {secondPet}, and {thirdPet} will be joining your voyage across space!");
+      }
+
+      static void NamePets()
+      {
+        Console.WriteLine("Aw, you have no spacefaring pets :(");
+      }
+    }
+  }
+  /* The result in the console is:
+  Your pets Laika and Albert will be joining your voyage across space!
+  Your pets Mango, Puddy, and Bucket will be joining your voyage across space!
+  Aw, you have no spacefaring pets :( */  
+  ```
