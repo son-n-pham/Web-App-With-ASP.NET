@@ -234,7 +234,13 @@ Or the below will define an array with a fixed length of 5 (have 5 items)
 int[] plantHeights = new int[5];
 ```
 
-
-
+#### Array Built-In Methods
+There several methods, ie. Array.Sort(ourArray), Array.IndexOf(ourArray, value), Array.Find(ourArray, predicate). Predicate is a method taking one input and outputting a boolean.
+```C#
+int[] plantHeights = { 3, 6, 4, 1, 6, 8 };
+ 
+// Find the first occurence of a plant height that is greater than 5 inches
+int firstHeight = Array.Find(plantHeights, height => height > 5);
+```
  
 
