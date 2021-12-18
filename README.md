@@ -53,4 +53,19 @@ There are 2 type of conversion:
     // Round myDouble to the near whole number by a built-in method
     int myInt = System.Convert.ToInt32(myDouble);
     ```
+    
+### Logic and Conditionals
 
+#### If...Else If...Else... Statements
+
+#### Switch Statements
+
+#### Ternary Operators
+
+It is the compact syntax of if...else...
+
+```C#
+string color = "blue";
+string result = (color=="blue") ? "It is blue" : "It is not blue"; //if the variable color is "blue", result is "It is blue", otherwise result is "It is not blue"
+Console.WriteLine(result); //"It is not blue is printed out in the console
+```
