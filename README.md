@@ -229,6 +229,10 @@ Or
 int[] plantHeights = {3, 4, 5};
 ```
 
+Or the below will define an array with a fixed length of 5 (have 5 items)
+```C#
+int[] plantHeights = new int[5];
+```
 
 
 
