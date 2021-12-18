@@ -74,7 +74,7 @@ Console.WriteLine(result); //"It is not blue" is printed out in the console
 
 #### Method Calls and Input
 
-Method Overloading: 
+##### Method Overloading: 
 - Methods can have the same name, which each of them is called *overload*.
 - Overloads have either different parameter types or differnt number of parameters, and they behave differently.
 - This is useful when we want the same method behaves differently based on its inputs.
