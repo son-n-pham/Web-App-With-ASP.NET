@@ -203,6 +203,32 @@ Array.Exists(number, (n) => n==10);
 Array.Exists(number, n => n==10);
 ```
 
+### Arrays and Loops
+
+#### Building an Array
+
+One way
+```C#
+// Initial declaration
+int[] plantHeights;
+
+// Assign values to the array
+plantHeights = new int[] {3, 4, 5};
+
+// The below will cause an error
+// plantHeights = {3, 4, 5};
+```
+
+Other way
+```C#
+int[] plantHeights = new int[] {3, 4, 5};
+```
+
+Or
+```C#
+int[] plantHeights = {3, 4, 5};
+```
+
 
 
 
