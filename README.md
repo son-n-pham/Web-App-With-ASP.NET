@@ -151,4 +151,59 @@ Result of this program:
 garrrr
 True */
 ```
+##### Expression-Bodied Methods:
+Method with a single statement or expression can be written in expression-bodied form.
 
+```C#
+static int Add(int x, int y)
+{
+  return x + y;
+}
+ 
+static void PrintUpper(string str)
+{
+  Console.WriteLine(str.ToUpper());
+}
+ 
+// The same methods written in expression-body form.
+static int Add(int x, int y) => x + y;
+ 
+static void PrintUpper(string str) => Console.WriteLine(str.ToUpper());
+```
+
+##### Method is used as argument and Lambda Expression
+Methods can be use as arguments. The below case with Array.Exists() is an example. Array.Exist takes 2 argument, which an array is the first and a method as the second. When running, method is run with each item of the array.
+
+Lambda expression is a block code which can be used as value or expression in other methods.
+
+```C#
+int[] numbers = { 3, 10, 4, 6, 8 };
+
+static bool isTen(int n) {
+  return n == 10;
+}
+ 
+// `Array.Exists` calls the method passed in for every value in `numbers` and returns true if any call returns true.
+Array.Exists(numbers, isTen);
+ 
+// Lambda expression is used to replace isTen method
+Array.Exists(numbers, (int n) => {
+  return n == 10;
+});
+
+// We can also write Lambda as below because there is only 1 expression from Lambda
+Array.Exists(numbers, (int n) => n==10);
+
+// Or get rid of int as C# implicitly reckon that n should be integer
+Array.Exists(number, (n) => n==10);
+
+// Or even get rid of the () as lambda expression has only 1 argument
+Array.Exists(number, n => n==10);
+```
+
+
+
+
+ 
+// Typical syntax
+// (input-parameters) => { <statements> }
