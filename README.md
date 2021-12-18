@@ -114,3 +114,40 @@ Console.WriteLine(result); //"It is not blue" is printed out in the console
   Your pets Mango, Puddy, and Bucket will be joining your voyage across space!
   Aw, you have no spacefaring pets :( */  
   ```
+  
+#### Method Output
+
+##### out
+Method can return only 1 value. In order to return more than one, **out** can be used.
+```C#
+using System;
+
+namespace OutErrors
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      string statement = "GARRRR";
+      bool marker;
+			string murmur = Whisper(statement, out marker);
+      Console.WriteLine(murmur);
+      Console.WriteLine(marker);
+    }  
+    
+    static string Whisper(string phrase, out bool wasWhisperCalled)
+    {
+      wasWhisperCalled = true;
+      return phrase.ToLower();
+    }
+	} 
+}
+/* out keyword is used when define Whisper method
+The result parameter wasWhispercalled of out is assigned a value inside method
+The method Whipser also return a string by its return statement
+
+Result of this program:
+garrrr
+True */
+```
+
