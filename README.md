@@ -67,5 +67,5 @@ It is the compact syntax of if...else...
 ```C#
 string color = "blue";
 string result = (color=="blue") ? "It is blue" : "It is not blue"; //if the variable color is "blue", result is "It is blue", otherwise result is "It is not blue"
-Console.WriteLine(result); //"It is not blue is printed out in the console
+Console.WriteLine(result); //"It is not blue" is printed out in the console
 ```
