@@ -252,7 +252,48 @@ int firstHeight = Array.Find(plantHeights, height => height > 5);
 ```C#
 while (condition)
 {
-	statement;
+  statement;
 }
 ```
 
+##### Do...While Loop
+
+```C#
+do
+{
+  statement;
+}
+```
+
+##### For Loop
+
+```C#
+for (initialization; stopping condition; iteration statement)
+{
+  statement;
+}
+```
+
+```C#
+for (int i = 0; i < 10; i++)
+{
+  Console.WriteLine(i);
+}
+```
+
+##### For Each Loop
+
+```C
+foreach (type element in sequence)
+{
+  statement;
+}
+```
+
+```C
+string[] melody = { "a", "b", "c", "c", "b" };
+foreach (string note in melody)
+{
+  Console.WriteLine(note);
+}
+```
