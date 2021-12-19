@@ -15,7 +15,7 @@ There is a "dot net" confusion (Or at least to me ^^) with the big list of .NET,
 - Provide tools to build software such tools for printing text to the screen and finding the current time
 - Define a set of data types, ie. text, numbers, dates, ..., to conveniently store info in program
 
-### Versions of .NET: They do the same job but for different operating system:
+### Versions of .NET: They do the same job but for different operating systems:
 - .NET Framework is the original .NET running on only Windows computers.
 - .NET Core is the new, cross-platform version running on Windows, MacOS and Linux. Microsoft plans to rename .NET Core to .NET
 
@@ -205,7 +205,9 @@ Array.Exists(number, n => n==10);
 
 ### Arrays and Loops
 
-#### Building an Array
+#### Arrays
+
+##### Building an Array
 
 One way
 ```C#
@@ -234,7 +236,7 @@ Or the below will define an array with a fixed length of 5 (have 5 items)
 int[] plantHeights = new int[5];
 ```
 
-#### Array Built-In Methods
+##### Array Built-In Methods
 There several methods, ie. Array.Sort(ourArray), Array.IndexOf(ourArray, value), Array.Find(ourArray, predicate). Predicate is a method taking one input and outputting a boolean.
 ```C#
 int[] plantHeights = { 3, 6, 4, 1, 6, 8 };
@@ -243,4 +245,14 @@ int[] plantHeights = { 3, 6, 4, 1, 6, 8 };
 int firstHeight = Array.Find(plantHeights, height => height > 5);
 ```
  
+#### Loops
+
+##### While Loop
+
+```C#
+while (condition)
+{
+	statement;
+}
+```
 
