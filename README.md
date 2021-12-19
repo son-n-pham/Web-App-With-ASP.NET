@@ -302,3 +302,8 @@ foreach (string note in melody)
 - do...while loops are only necessary if you definitely want something to run once, but then stop if a condition is met.
 - for loops are best if you want something to run a specific number of times, rather than given a certain condition.
 - foreach loops are the best way to loop over an array, or any other collection.
+
+##### Jump Statements
+- break: end the loop
+- continue: bypass the rest potions of that round, go back to the top and continue the next round of the loop
+- return: if return is used within a loop in a method, it breaks out the loop and returns control to the point in the program where the method was called.
