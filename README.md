@@ -424,6 +424,7 @@ namespace StaticMembers
       return Trees;
     }
     
+    // Static method to handle static field TreeFacts
     public static void PrintTreeFacts()
     {
       Console.WriteLine(TreeFacts);
