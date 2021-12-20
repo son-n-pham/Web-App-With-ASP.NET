@@ -309,3 +309,146 @@ foreach (string note in melody)
 - return: if return is used within a loop in a method, it breaks out the loop and returns control to the point in the program where the method was called.
 
 ### Classes and Objects
+What to remember:
+- Declare class: class Program {}
+- Initiate object from class, we cannot initiate static class
+- Field, constructor, constructor overloading, properties, method
+- static
+
+Below codes have all of the above:
+```C#
+// These codes to create class Forest
+using System;
+
+namespace StaticMembers
+{
+  class Forest
+  {
+    // FIELDS
+    
+    public int age;
+    private string biome;
+    private static int forestsCreated;
+    private static string treeFacts;
+    
+    // CONSTRUCTORS
+    
+    public Forest(string name, string biome)
+    {
+      this.Name = name;
+      this.Biome = biome;
+      Age = 0;
+      ForestsCreated++;
+    }
+    
+    public Forest(string name) : this(name, "Unknown")
+    { }
+    
+    */ The above 2 constructors can be replaced by the below
+    public Forest(string name, string biome="Unknown")
+    {
+      this.Name = name;
+      this.Biome = biome;
+      Age = 0;
+      ForestsCreated++;
+    }
+    */
+    
+    // This static constructor to assign value to treeFacts and ForestsCreated static fields which is applied to class Forest.
+    // Only static constructor or method can handle static fields, properties
+    // Static constructor is run before an object is made or before a static member is accessed.
+    
+    static Forest()
+    {
+      treeFacts = "Forests provide a diversity of ecosystem services including:\r\n  aiding in regulating climate.\r\n  purifying water.\r\n  mitigating natural hazards such as floods.\n";
+      ForestsCreated = 0;
+      
+    }
+    
+    // PROPERTIES
+    
+    public string Name
+    { get; set; }
+    
+    public int Trees
+    { get; set; }
+    
+    public string Biome
+    {
+      get { return biome; }
+      set
+      {
+        if (value == "Tropical" ||
+            value == "Temperate" ||
+            value == "Boreal")
+        {
+          biome = value;
+        }
+        else
+        {
+          biome = "Unknown";
+        }
+      }
+    }
+    
+    public int Age
+    { 
+      get { return age; }
+      private set { age = value; }
+    }
+    
+    public static int ForestsCreated
+    {
+      get { return forestsCreated; }
+      private set { forestsCreated = value; }
+    }
+    
+    public static string TreeFacts
+    {
+      get { return treeFacts; }
+    }
+    
+    // METHODS
+     
+    public int Grow()
+    {
+      Trees += 30;
+      Age += 1;
+      return Trees;
+    }
+    
+    public int Burn()
+    {
+      Trees -= 20;
+      Age += 1;
+      return Trees;
+    }
+    
+    public static void PrintTreeFacts()
+    {
+      Console.WriteLine(TreeFacts);
+    }
+    
+  }
+
+}
+```
+
+The Program is calling the above Forest class as below
+```C#
+using System;
+
+namespace StaticMembers
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Console.WriteLine(Forest.ForestsCreated);
+      Forest f1 = new Forest("name1");
+      Forest f2 = new Forest("name2");
+      Console.WriteLine(Forest.ForestsCreated);
+    }
+  }
+}
+```
