@@ -373,6 +373,7 @@ namespace StaticMembers
     public int Trees
     { get; set; }
     
+    // Validate input
     public string Biome
     {
       get { return biome; }
@@ -391,18 +392,21 @@ namespace StaticMembers
       }
     }
     
+    // Do not allow outsider to set age field
     public int Age
     { 
       get { return age; }
       private set { age = value; }
     }
     
+    // Static properties
     public static int ForestsCreated
     {
       get { return forestsCreated; }
       private set { forestsCreated = value; }
     }
     
+    // Static properties
     public static string TreeFacts
     {
       get { return treeFacts; }
