@@ -457,3 +457,70 @@ namespace StaticMembers
   }
 }
 ```
+
+### Interface
+- Interface is used to ensure certain functionality across multiple class
+- A class can implement multiple interfaces
+- We can face the issue of code duplications if various class have the exactly the same methods from interface. This can be resolved with inheritance
+
+Example codes:
+
+IAutomobile interface stored in IAutomobile.cs
+```C#
+using System;
+
+namespace LearnInterfaces
+{
+  interface IAutomobile
+  {
+    string LicensePlate { get; }
+    double Speed { get; }
+    int Wheels { get; }
+    void Honk();
+  }
+}
+```
+
+Sedan class, stored in Sedam.cs, implement the IAutomobile. Besides the properties and method in the interface, Sedan class has its own methods of SpeedUp and SlowDown.
+```C#
+using System;
+
+namespace LearnInterfaces
+{
+  class Sedan : IAutomobile
+  {
+    public string LicensePlate
+    { get; }
+
+    public double Speed
+    { get; private set; }
+
+    public int Wheels
+    { get; }
+    
+    public Sedan(double speed)
+    {
+      Speed = speed;
+      LicensePlate = Tools.GenerateLicensePlate();
+      Wheels = 4;
+    }
+    
+    public void Honk()
+    {
+      Console.WriteLine("HONK!");
+    }
+    
+    public void SpeedUp()
+    {
+      Speed += 5;
+    }
+
+    public void SlowDown()
+    {
+      Speed -= 5;
+    }
+  }
+}
+```
+
+
