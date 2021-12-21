@@ -626,3 +626,11 @@ namespace LearnInheritance
   }
 }
 ```
+
+### References
+- Reference types: These do nothold values but refer to a location in memory where values are. Classes are reference types
+- Value type: "primitive" data type, ie. int, double, bool. char
+
+Below picture is an example of reference and value types. diss1 and diss2 are reference types while num is value type.
+![image](https://user-images.githubusercontent.com/79841341/146958564-23311a13-a8f9-4607-8edf-34bea4f2b5d8.png)
+
