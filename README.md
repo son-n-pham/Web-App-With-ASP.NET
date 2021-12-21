@@ -481,7 +481,7 @@ namespace LearnInterfaces
 }
 ```
 
-Sedan class, stored in Sedam.cs, implement the IAutomobile. Besides the properties and method in the interface, Sedan class has its own methods of SpeedUp and SlowDown.
+Sedan class, stored in Sedan.cs, implement the IAutomobile. Besides the properties and method in the interface, Sedan class has its own methods of SpeedUp and SlowDown.
 ```C#
 using System;
 
