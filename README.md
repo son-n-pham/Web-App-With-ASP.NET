@@ -523,4 +523,106 @@ namespace LearnInterfaces
 }
 ```
 
+### Inheritance
+- Inheritance helps to avoid code duplication in multiple classes
+- In inheritance, we have superclasss (or base class) and subclass (or derived class). We can access superclass by **base**.
+- private keyword limit the access from outer class, including subclasses. In order for subclass to access, protected (instead of private) keyword can be used.
+- When subclass inherits the superclass, parameteredless constructor of superclass will be implicitly called for the constructor in superclass. To avoid that unclear, we can explicitly define the constructor in the superclass.
+- Subclasses can override the method of superclass by virtual (in superclass) and override (in subclass). Other option is to use just the **new** keyword in subclass, which is actually create the new method in subclass and hide the same method from superclass.
+- If superclass has methods methods which will certainly be used differently from subclasses, **abstract** keyword can be used with that method. Once a method is with abstract, abstract needs to be used with that class. The class becomes an abstract class, which cannot be instantiated.
 
+Example:
+Abstract class Vehicle
+```C#
+using System;
+
+namespace LearnInheritance
+{
+  abstract class Vehicle
+  {
+    public string LicensePlate
+    { get; private set; }
+
+    // Protected keyword is used to allow subclass to set the property, but
+    // the property is still inaccessible by other classes
+    public double Speed
+    { get; protected set; }
+
+    public int Wheels
+    { get; protected set; }
+
+    // Explicitly define the constructor
+    public Vehicle(double speed)
+    {
+      Speed = speed;
+      LicensePlate = Tools.GenerateLicensePlate();
+    }
+
+    public virtual void SpeedUp()
+    {
+      Speed += 5;
+    }
+
+    public virtual void SlowDown()
+    {
+      Speed -= 5;
+    }
+    
+    // virtual keyword is used to allow subclass to override it
+    public virtual void Honk()
+    {
+      Console.WriteLine("HONK!");
+    }
+
+    // Abstract method Describe. Because of this, this class has to be an abstract class
+    public abstract string Describe();
+
+  }
+}
+```
+
+Bicycle is inheriting Vehicle superclass
+```C#
+using System;
+
+namespace LearnInheritance
+{
+  class Bicycle : Vehicle
+  {
+    // Subclass' constructor. The keyword base is used
+    public Bicycle(double speed) : base(speed)
+    {
+      Wheels = 2;
+    }
+
+    // override method, which has virtual keyword in the superclass
+    public override void SpeedUp()
+    {
+      Speed += 5;
+      
+      if (Speed > 15)
+      {
+        Speed = 15;
+      }
+    }
+
+    // override method, which has virtual keyword in the superclass
+    public override void SlowDown()
+    {
+      Speed -= 5;
+
+      if (Speed < 0)
+      {
+        Speed = 0;
+      }
+    }
+
+    // override is used to define the abstract method Describe
+    public override string Describe()
+    {
+      return $"This Bicycle is moving on {Wheels} wheels at {Speed} km/h, with license plate {LicensePlate}.";
+    }
+
+  }
+}
+```
