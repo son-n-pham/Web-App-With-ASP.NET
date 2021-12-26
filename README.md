@@ -634,3 +634,11 @@ namespace LearnInheritance
 Below picture is an example of reference and value types. diss1 and diss2 are reference types while num is value type.
 ![image](https://user-images.githubusercontent.com/79841341/146958564-23311a13-a8f9-4607-8edf-34bea4f2b5d8.png)
 
+### Lists
+
+Comparison between Array and List
+Array | List
+-- | --
+- Have litmited length | - Have unlimited length
+- Can only edit one element at a time | - Have handy methods to work with multiple elements at a time
+- 
