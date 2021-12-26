@@ -639,6 +639,6 @@ Below picture is an example of reference and value types. diss1 and diss2 are re
 Comparison between Array and List
 Array | List
 -- | --
-- Have litmited length | - Have unlimited length
-- Can only edit one element at a time | - Have handy methods to work with multiple elements at a time
-- 
+Have litmited length |  Have unlimited length
+Can only edit one element at a time |  Have handy methods to work with multiple elements at a time
+--
