@@ -641,4 +641,25 @@ Array | List
 -- | --
 Have litmited length |  Have unlimited length
 Can only edit one element at a time |  Have handy methods to work with multiple elements at a time
---
+
+List is in a group of classes called generic colletion. To use list, the below code will need to be added in the beginnig of the C# file.
+```C#
+using System.Collections.Generic
+```
+
+List can be created as empty lists or with components.
+```C#
+// Create empty list
+List<int> count = new List<int>();
+
+// Create list with components
+List<int> someNumber = new List<int>{1, 2, 4};
+```
+
+Why we do not use list instead of array all the time?
+- List is actually array behind the scene
+- If list get longers, C# compiler construct the new array and copy all elements to there.
+- Thus array is faster and should be used if we know the pre-determined number of elements.
+
+
+
