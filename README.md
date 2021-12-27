@@ -10,8 +10,8 @@ There is a "dot net" confusion (Or at least to me ^^) with the big list of .NET,
   - Formally: .NET is an open source developer platform, created by Microsoft, for building various application types with several programming languages such as C#, F#, Visual C++ or Visual Basic
   - Informally: .NET is platform using C#
 
-### Why is .NET including? It is including a bunch of programs that:
-- Compile C# code into intruction for computer to understand
+### What is .NET including? It is including a bunch of programs that:
+- Compile C# code into instruction for computer to understand
 - Provide tools to build software such tools for printing text to the screen and finding the current time
 - Define a set of data types, ie. text, numbers, dates, ..., to conveniently store info in program
 
