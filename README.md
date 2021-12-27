@@ -25,7 +25,16 @@ There are 2 main ways:
 - Download **.NET SDK** (Software Development Kit), which comes with .NET platform without IDE. The SDK is accessed via a Command-Line Interface (CLI)
 
 ### What about ASP.NET
-ASP.NET is the framework on top of .NET platform to build Web App.
+ASP.NET is the framework on top of .NET platform to build **web app** and **web service**. Some tools included in ASP.NET are:
+- A base framework to process web request in C# or F#
+- A front-end syntax, called Razor, for building dynamic web pages using C#
+- Library for common web pattern, ie. Model View Controller (MVC)
+- Authentication system with libraries, a database, and template pages for handling logins
+- Editor extensions to provide syntax highlighting, code completion and other functionality specifically for developing web pages
+
+There are various architectures (or pattern) to build ASP.NET web apps. We focus on Razor Pages architecture using MVC. Every page from the Razor architecture is represented by 2 files:
+- A view page, which displays information
+- A page model, which handles the accessing and processing of information
 
 ## C\# Programming Language
 
