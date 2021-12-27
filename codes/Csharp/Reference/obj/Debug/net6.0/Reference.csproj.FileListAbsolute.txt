@@ -1,0 +1,15 @@
+C:\development\ASP\Csharp\Reference\bin\Debug\net6.0\Reference.exe
+C:\development\ASP\Csharp\Reference\bin\Debug\net6.0\Reference.deps.json
+C:\development\ASP\Csharp\Reference\bin\Debug\net6.0\Reference.runtimeconfig.json
+C:\development\ASP\Csharp\Reference\bin\Debug\net6.0\Reference.dll
+C:\development\ASP\Csharp\Reference\bin\Debug\net6.0\ref\Reference.dll
+C:\development\ASP\Csharp\Reference\bin\Debug\net6.0\Reference.pdb
+C:\development\ASP\Csharp\Reference\obj\Debug\net6.0\Reference.csproj.AssemblyReference.cache
+C:\development\ASP\Csharp\Reference\obj\Debug\net6.0\Reference.GeneratedMSBuildEditorConfig.editorconfig
+C:\development\ASP\Csharp\Reference\obj\Debug\net6.0\Reference.AssemblyInfoInputs.cache
+C:\development\ASP\Csharp\Reference\obj\Debug\net6.0\Reference.AssemblyInfo.cs
+C:\development\ASP\Csharp\Reference\obj\Debug\net6.0\Reference.csproj.CoreCompileInputs.cache
+C:\development\ASP\Csharp\Reference\obj\Debug\net6.0\Reference.dll
+C:\development\ASP\Csharp\Reference\obj\Debug\net6.0\ref\Reference.dll
+C:\development\ASP\Csharp\Reference\obj\Debug\net6.0\Reference.pdb
+C:\development\ASP\Csharp\Reference\obj\Debug\net6.0\Reference.genruntimeconfig.cache
