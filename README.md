@@ -849,4 +849,33 @@ Sharing pages can be used to render sharing contents of webpages, including titl
 }
 ```
 
-The **\_Layout** file is the **\_Layout.cshtml** file in the /Pages/Shared folder. Inside \_Layout.cshtml, there is a method called **@RenderBody()** within the \<body\> tag, which is the place rendering the content of Page View files using the shared \Layout.cshtml file.
+The **\_Layout** file is the **\_Layout.cshtml** file in the /Pages/Shared folder. Inside \_Layout.cshtml, there is a method called **@RenderBody()** within the \<body\> tag, which is the place rendering the content of Page View files using the shared \_Layout.cshtml file.
+
+#### Working with ViewImports
+
+On top of sharing laouts is the \_ViewImports.cshtml which is available globally in all pages and take care of imports for all pages. There are 3 most commons in that file:
+- @namespace
+- @using
+- @addTagHelpers
+
+```C#
+// using is to import namespace for all pages
+@using LearnASP
+
+// Namespaces helps us organize our code into group by giving them some context. In this case, it is declaring the root of our Pages
+@namespace LearnASP.Pages
+
+// Give access to Tage Helpers
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+```
+
+#### Using Partials
+
+We can use Partial files to reuse it in our Pages to avoid DRY (Don't Repeat Yourself).
+- Partial files are placed in /Pages/Shared folder
+- Partial files start with "\_" as tradition, ie. \_MyPartial.cshtml
+- To call the partial file, we use the below syntax
+  ```html
+  <partial name="_PartialName" />
+  ```
+  
