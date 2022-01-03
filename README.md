@@ -838,3 +838,15 @@ The page view file index.cshtml has the below code. **@model PizzaModel** is in 
 And here is the result in the web browser.
 
 ![image](https://user-images.githubusercontent.com/79841341/147913242-9749dec3-cd43-48eb-b4dc-0e0b101ea30a.png)
+
+#### Sharing Pages
+
+Sharing pages can be used to render sharing contents of webpages, including title, header, footer etc. ASP.NET specifies the location of main layout page in the **\_ViewStart.cshtml** file, which is under /Pages folder. The content of that page looks like:
+
+```C#
+@{
+  Layout = "_Layout";
+}
+```
+
+The **\_Layout** file is the **\_Layout.cshtml** file in the /Pages/Shared folder. Inside \_Layout.cshtml, there is a method called **@RenderBody()** within the \<body\> tag, which is the place rendering the content of Page View files using the shared \Layout.cshtml file.
