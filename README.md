@@ -763,10 +763,11 @@ There are couple of ways to write C# in Razor Page:
 
 The 2nd line in the view model needs to have @model PageModel to use the PageModel of that view. Below is the example code.
 
-Page Model file index.cshtml.cs contains PizzaModel class. OnGet() method will be run automatically when the webpage is opened.
+Page Model file index.cshtml.cs contains PizzaModel class. 
+- OnGet() method will be run automatically when the webpage is opened.
+- ViewData is used to transfer data from Page Model to Page View. ViewData is of type ViewDataDictionary acting as a generic dictionary.
 
 ```C#
-
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
@@ -802,6 +803,8 @@ namespace LearnASP.Pages
             Order = "Cheese";
             ExtraCheese = false;
             Total = PizzaTotal(Order);
+            ViewData["Delivery"] = "Pick-up";
+            ViewData["AmountOfPizza"] = 7;
         }
     }
 }
@@ -826,7 +829,9 @@ The page view file index.cshtml has the below code. **@model PizzaModel** is in 
         <h5>Pizza for: @Model.Customer</h5>
         <h5>Order: @Model.Order</h5>
         <h5>Extra Cheese: @Model.ExtraCheese</h5>
-        <h5>Total: $@String.Format("{0:0.00}", Model.Total)</h5>
+        <h5>Delivery: @ViewData["Delivery"]</h5>
+        <h5>Amount of Pizza: @ViewData["AmountOfPizza"]</h5>
+        <h5>Total: $@String.Format("{0:0.00}", Model.Total * System.Convert.ToDouble(ViewData["AmountOfPizza"]))</h5>
     </div>
 </div>
 ```
