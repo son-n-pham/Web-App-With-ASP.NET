@@ -736,6 +736,12 @@ With Razor page, everything related to a specific page is in one place, they inc
 
 There is a direct link between the URL of a webpage and the physical file location of that page in the server.
 - The URL: https://LearnRazorPages.com/Home/Welcome will use **Welcome.cshtml** file in the **/Home** folder of the root **Pages** folder.
-  ![image](https://user-images.githubusercontent.com/79841341/147898424-2f0d7cba-3da1-44d2-8837-73344024a486.png)	
+
+  ![image](https://user-images.githubusercontent.com/79841341/147898424-2f0d7cba-3da1-44d2-8837-73344024a486.png)
+  
+#### Structure of Razor View Page
+
+A page needs to have **@page** on the first line to be the view page file.
+
 
 
