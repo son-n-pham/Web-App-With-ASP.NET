@@ -724,6 +724,6 @@ namespace LearnLinq
 
 LINQ returns either a single value or an object of type IEnumerable<Type>. IEnumberable<Type> works similar to list, which we can loop through or check length with Count(). As the returned type from LINQ is unknown, LINQ allows us to use **var** keyword, and C# compiler will take care of determining the correct types.
 
+## ASP.NET
 
-	
-
+### Razor Page Syntax
