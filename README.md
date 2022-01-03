@@ -743,5 +743,93 @@ There is a direct link between the URL of a webpage and the physical file locati
 
 A page needs to have **@page** on the first line to be the view page file.
 
+There are couple of ways to write C# in Razor Page:
+
+```C#
+// C# code with one line and no space
+<h1>@DateTime.Now.ToShortDateString()</h1>
+
+// C# code needs spaces
+<h1>Last week this time @(DateTime.Now - TimeSpan.FromDays(7))<p>
+
+// C# code need more than one line or need to declare variables. Variables can only be declared by this way.
+@{
+  int num1 = 6;
+  int num2 =9
+  int result = num1 + num2;
+}
+```
+#### Working with the Page Model
+
+The 2nd line in the view model needs to have @model PageModel to use the PageModel of that view. Below is the example code.
+
+Page Model file index.cshtml.cs contains PizzaModel class. OnGet() method will be run automatically when the webpage is opened.
+
+```C#
+
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace LearnASP.Pages
+{
+    public class PizzaModel: PageModel
+    {
+        public double PizzaTotal(string pizzaType)
+        {
+            Dictionary<string, double> PizzaCost = new Dictionary<string, double>
+            {
+                {"Cheese", 10.00 },
+                {"Pepperoni", 11.00 },
+                {"Vegeterian", 12.00 },
+            };
+
+            return PizzaCost[pizzaType];
+        }
+
+        public string Customer { get; set; }
+        public string Order { get; set; }
+        public bool ExtraCheese { get; set; }
+        public double Total { get; set; }
+
+        public void OnGet()
+        {
+            Customer = "Son Pham";
+            Order = "Cheese";
+            ExtraCheese = false;
+            Total = PizzaTotal(Order);
+        }
+    }
+}
+```
+
+The page view file index.cshtml has the below code. **@model PizzaModel** is in line 2 of the file.
+
+```C#
+@page
+@model PizzaModel
+@{
+    ViewData["Title"] = "Home page";
+}
 
 
+<h1 class="text-center">My Pizza</h1>
+
+<div class="card mx-auto" style="width: 18rem;">
+    <div class="card-body">
+        <h4 class="card-title text-center">Confirm Your Order</h4>
+        <br>
+        <h5>Pizza for: @Model.Customer</h5>
+        <h5>Order: @Model.Order</h5>
+        <h5>Extra Cheese: @Model.ExtraCheese</h5>
+        <h5>Total: $@String.Format("{0:0.00}", Model.Total)</h5>
+    </div>
+</div>
+```
+And here is the result in the web browser.
+
+![image](https://user-images.githubusercontent.com/79841341/147913242-9749dec3-cd43-48eb-b4dc-0e0b101ea30a.png)
