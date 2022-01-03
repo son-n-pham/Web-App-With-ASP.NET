@@ -720,10 +720,22 @@ namespace LearnLinq
     }
   }
 }
-```
 
-LINQ returns either a single value or an object of type IEnumerable<Type>. IEnumberable<Type> works similar to list, which we can loop through or check length with Count(). As the returned type from LINQ is unknown, LINQ allows us to use **var** keyword, and C# compiler will take care of determining the correct types.
+//LINQ returns either a single value or an object of type IEnumerable<Type>. IEnumberable<Type> works similar to list, which we can loop
+//through or check length with Count(). As the returned type from LINQ is unknown, LINQ allows us to use **var** keyword, and C#
+//compiler will take care of determining the correct types.
+```
 
 ## ASP.NET
 
 ### Razor Page Syntax
+
+With Razor page, everything related to a specific page is in one place, they include:
+- Pages, referred as "view pages", have cshtml extension, ie. Home.cshtml. We can write C# code together with HTML.
+- PageModels, referred as "model pages", have cshtml.cs extension, ie. Home.cshtml.cs. Pagemodels handle the logic of what users interact with.
+
+There is a direct link between the URL of a webpage and the physical file location of that page in the server.
+- The URL: https://LearnRazorPages.com/Home/Welcome will use **Welcome.cshtml** file in the **/Home** folder of the root **Pages** folder.
+  ![image](https://user-images.githubusercontent.com/79841341/147898424-2f0d7cba-3da1-44d2-8837-73344024a486.png)	
+
+
