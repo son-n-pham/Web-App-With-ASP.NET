@@ -1013,4 +1013,23 @@ By default, each page's URL is defined by its filename. When using "@page" on th
 
 If we want privacy.cshtml has the URL of "localhost:8000/pirates", we can use **@page "/pirates"**. If we use **@page "pirates"**, the URL of the page is "localhost:8000/privacy/pirates". This can be used to shorten the URL if the View Page is placed deep inside the folder structure.
 
-When the URL has parameter, the parameter is from the OnGet in the Model Page
+When the URL has parameter, the parameter is from the OnGet in the Model Page. That parameter can be generated from asp-page and asp-route-{value} as mentioned previously.
+
+![image](https://user-images.githubusercontent.com/79841341/148227221-de4ac4a6-1184-4e89-8ab5-9a7ad5f3acd5.png)
+
+We can make the link of the resulted page to be better, whose href="./Author/Son+Pham, by using **@page /Authors/{fullname}**.
+- To improve further, we can set fullname to be optional with **@page /Authors/{fullname?}**.
+  - As the result, the OnGet() in the Model Page needs to be updated as the below example:
+    ```C#
+    public void OnGet(string? fullname)
+    {
+      if String.IsNullOrEmpty(fullname) // Check if the fullname has value
+      {
+        fullname = "son Pham"; // It is empty or null, thus set its value to Son Pham
+      } else
+      {
+        fullName = fullname.Value; // Set the value of fullName, which will be sent to PageView to generate the desire URL
+      }
+    }
+    ```
+- We can also set constraint on the parameter to ensure correct parameter is inserted to avoid our program to be broken. This is done by having **@page /Authors/{fullname: string?}**
