@@ -878,4 +878,19 @@ We can use Partial files to reuse it in our Pages to avoid DRY (Don't Repeat You
   ```html
   <partial name="_PartialName" />
   ```
+- Keyword "for" or "model" can be used to pass info to Partial files. Below is an example: 
+  - Partial file \Link.cshtml use model "string"
   
+    ![image](https://user-images.githubusercontent.com/79841341/148182702-3ff44c5c-8885-4739-a2aa-5705b3dee52a.png)
+  
+  - index.cshtml employ \_Link.cshtml with input info @Model.LinkedInUserName (which is son-n-pham) from its page model index.cshtml.cs
+
+    ![image](https://user-images.githubusercontent.com/79841341/148183060-b35e0893-7da5-4b47-b1bb-dd8fccf9ad57.png)
+    
+    ![image](https://user-images.githubusercontent.com/79841341/148183218-037cff33-2384-497f-85eb-06aad4c73007.png)
+
+    
+    
+
+
+
