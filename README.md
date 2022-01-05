@@ -1004,3 +1004,12 @@ public async Task OnGetAsync()
   }
 }
 ```
+
+#### Routing
+
+By default, each page's URL is defined by its filename. When using "@page" on the first line of of View Page, the page URL is following the default:
+- index.cshtml has the URL of locahost:8000
+- privacy.cshtml has the URL of localhost:8000/privacy
+
+If we want privacy.cshtml has the URL of "localhost:8000/pirates", we can use **@page "/pirates**. If we use **@page "pirates**, the URL of the page is "localhost:8000/privacy/pirates". This can be used to shorten the URL if the View Page is placed deep inside the folder structure.
+-
