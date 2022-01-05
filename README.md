@@ -941,3 +941,66 @@ Model page:
 ![image](https://user-images.githubusercontent.com/79841341/148187788-6fc3d9c0-ee17-446a-9065-6b2355584823.png)
 
 ![image](https://user-images.githubusercontent.com/79841341/148187840-71dd1d8b-4bc5-4629-b2ac-218e254e70cd.png)
+
+##### asp-for
+
+asp-for is the Input Tag Helper allowing us to create form easily by replacing both name and id in input of the form to shorten the syntax:
+
+```C#
+<form>
+  <input type="text" name="Author" id="Author">
+</form>
+```
+
+Above syntax in View Page can be changed to:
+
+```C#
+<form>
+  <input type="text" asp-for="Author">
+</form>
+```
+
+##### a tag with asp-page and asp-route-{value}
+
+asp-page and asp-route-{value} can be used with Anchor Tag a:
+- asp-page: set the href to a specific page
+- asp-route-{value}:
+  - Add route values to href
+
+```C#
+<a asp-page="./Authors" asp-route-fullname="Son Pham">Son</a>
+```
+
+is equivalent to the below a tag with href
+
+```C#
+<a href="./Authors?fullname=Son+Pham">Son</a>
+```
+
+  - And also is able to send the value to OnGet method in Page Model
+
+```C#
+public void OnGet(string fullname){}
+```
+
+##### OnGetAsync() and OnPostAsync()
+
+asynchronous operations is to allow computer to move on while that operation is still ongoing. To have asynchronous OnGet and OnPost, we need to do the below:
+- Converting "public void OnGet()" to "public async Task OnGetAsync()". Changing the method name is optional but recommended.
+- Using "using" keyword with disposible variable inside
+- Using "await" keyword with the synchronous operation.
+
+Below is the example, which computer can move on when the file storage.txt is read and its contect is assigned to variable content.
+
+```C#
+public async Task OnGetAsync()
+{
+  if (System.IO.File.Exists("storage.txt"))
+  {
+    using (StreamReader reader = System.IO.File.OpenText("storage.txt"))
+    {
+      string content = await reader.ReadtoEndAsync();
+    }
+  }
+}
+```
