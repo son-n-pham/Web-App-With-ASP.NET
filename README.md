@@ -889,8 +889,55 @@ We can use Partial files to reuse it in our Pages to avoid DRY (Don't Repeat You
     
     ![image](https://user-images.githubusercontent.com/79841341/148183218-037cff33-2384-497f-85eb-06aad4c73007.png)
 
-    
-    
+#### More on Page Model - OnGet and OnPost handler methods:
 
+##### OnGet
 
+##### OnPost
 
+OnPost is used to post info from the browser. Posted info is usually from forms. Below is the example of the form syntax in Page View and OnPost method in the Page Model respectively.
+
+```C#
+<form method="post">
+    <div class="form-group">
+	<label for="Title">Title</label>
+	<input type="text" class="form-control" id="Title" name="Title" placeholder="Title" />
+    </div>
+    <div class="form-group">
+	<label for="Date">Date</label>
+	<input type="date" class="form-control" id="Date" name="Date">
+    </div>
+    <div class="form-group">
+	<label for="Body">Your post</label>
+	<textarea class="form-control" id="Body" name="Body" rows="3"></textarea>
+    </div>
+    <button type="submit" class="btn" id="submit">Submit</button>
+</form>
+```
+
+The below OnPost method assign info from forms to properties Title, Date and Body
+
+```C#
+public void OnPost(string title, DateTime date, string body)
+{
+    Title = title;
+    Date = date;
+    Body = body;
+}
+```
+
+##### Model Binding with OnPost
+
+In theory, model binding can be used with both OnPost and OnGet; however, it is recommended for using with only OnPost for security reason as security is built against posted info to protect the system.
+
+To activate model binding, we just need to have **[BindProperty]"** on top of properties in Page Model. We just need to ensure that the property names in page model matched with name in the form. Thanks to the model binding, OnPost method can be kept empty.
+
+View page:
+
+![image](https://user-images.githubusercontent.com/79841341/148187709-29307894-8fc6-498b-b61e-45ef080ace7f.png)
+
+Model page:
+
+![image](https://user-images.githubusercontent.com/79841341/148187788-6fc3d9c0-ee17-446a-9065-6b2355584823.png)
+
+![image](https://user-images.githubusercontent.com/79841341/148187840-71dd1d8b-4bc5-4629-b2ac-218e254e70cd.png)
