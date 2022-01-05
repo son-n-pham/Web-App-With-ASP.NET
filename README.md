@@ -967,21 +967,21 @@ asp-page and asp-route-{value} can be used with Anchor Tag a:
 - asp-route-{value}:
   - Add route values to href
 
-```C#
-<a asp-page="./Authors" asp-route-fullname="Son Pham">Son</a>
-```
+	```C#
+	<a asp-page="./Authors" asp-route-fullname="Son Pham">Son</a>
+	```
 
-is equivalent to the below a tag with href
+	is equivalent to the below a tag with href
 
-```C#
-<a href="./Authors?fullname=Son+Pham">Son</a>
-```
+	```C#
+	<a href="./Authors?fullname=Son+Pham">Son</a>
+	```
 
   - And also is able to send the value to OnGet method in Page Model
 
-```C#
-public void OnGet(string fullname){}
-```
+	```C#
+	public void OnGet(string fullname){}
+	```
 
 ##### OnGetAsync() and OnPostAsync()
 
