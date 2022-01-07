@@ -1033,3 +1033,6 @@ We can make the link of the resulted page to be better, whose href="./Author/Son
     }
     ```
 - We can also set constraint on the parameter to ensure correct parameter is inserted to avoid our program to be broken. This is done by having **@page /Authors/{fullname: string?}**
+
+#### Redirect
+
