@@ -1289,3 +1289,8 @@ namespace RazorCountry
     }
 }
 ```
+
+##### Entity Framework (EF) Context Diagram
+
+![image](https://user-images.githubusercontent.com/79841341/148565406-605c6a9f-5f50-4541-afa2-a68f428d298c.png)
+
