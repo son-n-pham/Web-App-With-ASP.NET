@@ -1097,4 +1097,21 @@ To redirect, our method needs to return an object implementing IActionResult int
 
 ![image](https://user-images.githubusercontent.com/79841341/148530802-470cbcf9-aafa-487e-a059-f44478f4e213.png)
 
+##### Add Entity Framework Tools
 
+Not all tools are installed as default, thus we need to install more tools for our project depending on our needs and versions. We might need to go from the latest versions of tools and backward until locating the suitable tool versions.
+
+The installation can be in CLI with dotnet add package \<framework\> or from the NuGet Package tool.
+
+Example of CLI:
+```C#
+dotnet add package Microsoft.EntityFrameworkCore.SQLite
+```
+
+And example of NuGet Package:
+
+![image](https://user-images.githubusercontent.com/79841341/148536648-7245c5b0-5171-4355-bd11-47a08b62104b.png)
+
+The installation download files and update the project file.	
+
+![image](https://user-images.githubusercontent.com/79841341/148537030-389fad1a-5ad9-4821-8eb0-9c11dd3b620a.png)
