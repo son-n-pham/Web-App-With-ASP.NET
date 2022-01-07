@@ -1086,3 +1086,15 @@ To redirect, our method needs to return an object implementing IActionResult int
 - Model is manually created in Visual Studio. Below is an example of the model Country
 
 ![image](https://user-images.githubusercontent.com/79841341/148529098-2cc5d163-8dcf-479d-985b-712b49290f65.png)
+
+##### Add the Database Connection String
+
+- Connection string is the link between C# code and the physical database.
+- The context must know where the database is located and how to authenticate to the database service.
+- By convention, connection string has the same name as the context class
+- That info is stored in appsettings.json
+- Below is an example of adding ConnectionStrings for the Country context class
+
+![image](https://user-images.githubusercontent.com/79841341/148530802-470cbcf9-aafa-487e-a059-f44478f4e213.png)
+
+
