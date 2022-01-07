@@ -1074,3 +1074,15 @@ To redirect, our method needs to return an object implementing IActionResult int
   ```C#
   public async Task<IActionResult> OnGetAsync() { }
   ```
+
+### Database
+
+#### Data Models
+
+##### Add Data Models
+
+- Models are C# classes defining engity structure.
+- Those classes are with names representing entities
+- Model is manually created in Visual Studio. Below is an example of the model Country
+
+![image](https://user-images.githubusercontent.com/79841341/148529098-2cc5d163-8dcf-479d-985b-712b49290f65.png)
