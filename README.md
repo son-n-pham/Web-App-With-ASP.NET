@@ -1115,3 +1115,120 @@ And example of NuGet Package:
 The installation download files and update the project file.	
 
 ![image](https://user-images.githubusercontent.com/79841341/148537030-389fad1a-5ad9-4821-8eb0-9c11dd3b620a.png)
+
+##### Build the Entity Framework Context
+
+- This context is to support database creation and maintenance.
+- It is in the Data folder with the name of the model and the suffix of "Context". Ie. The context file of Country.cs model is CountryContext.cs.
+
+![image](https://user-images.githubusercontent.com/79841341/148550363-b4fd531b-bbe8-4d93-8993-45524514b2f3.png)
+
+The code of the CountryContext.cs is as below.
+
+```C#
+// Enable Entity Framework
+using Microsoft.EntityFrameworkCore;
+// Point to model classes
+using RazorCountry.Models;
+
+// namespace to project name then Data folder of the CountryContext.cs
+namespace RazorCountry.Data
+{
+    // Create CountryContext class
+    public class CountryContext: DbContext
+    {
+        // Create a class constructure
+        public CountryContext(DbContextOptions<CountryContext> options) : base(options)
+        {
+        }
+
+        // Create 2 DbSet properties for 2 tables Continents and Countries
+        public DbSet<Continent> Continents { get; set; }
+        public DbSet<Country> Countries { get; set; }
+
+        // This is to create database tables if they do not yet exist
+        // This is done by using modelBuilder.Entity() with a type parameter matching
+        // the entity name, then have ToTable() passing in the desired table name
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Continent>().ToTable("Continent");
+            modelBuilder.Entity<Country>().ToTable("Country");
+        }
+    }
+}
+```
+
+Below is the summary steps of the above in the context file:
+- Add a context definition, which is a class
+- Define 2 DbSet List objects Continents and Countries, which represents 2 database tables
+- Include OnModelCreating() method, which create tables in the database if they do not exist yet.
+
+Then we have 2 final steps:
+- Edit Startup.cs file to create services and eject them into pages.
+
+```C#
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+//Add 2 new "usings" for new context CountryContext
+using Microsoft.EntityFrameworkCore;
+using RazorCountry.Data;
+
+namespace RazorCountry
+{
+    public class Startup
+    {
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+
+        public IConfiguration Configuration { get; }
+
+        // This method gets called by the runtime. Use this method to add services to the container.
+        public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddRazorPages();
+
+            // *******************************************************************
+	    // Add database context service, which relies on the connection string
+            // configuration setting in appsettings.json
+            services.AddDbContext<CountryContext>(options => options.UseSqlite(Configuration.GetConnectionString("CountryContext")));
+        }
+
+        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        {
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+            else
+            {
+                app.UseExceptionHandler("/Error");
+                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+                app.UseHsts();
+            }
+
+            app.UseHttpsRedirection();
+            app.UseStaticFiles();
+
+            app.UseRouting();
+
+            app.UseAuthorization();
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapRazorPages();
+            });
+        }
+    }
+}
+```
