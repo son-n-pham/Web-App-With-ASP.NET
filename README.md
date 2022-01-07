@@ -1177,7 +1177,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-//Add 2 new "usings" for new context CountryContext
+// ***********************************************
+// Add 2 new "usings" for new context CountryContext
 using Microsoft.EntityFrameworkCore;
 using RazorCountry.Data;
 
@@ -1229,6 +1230,62 @@ namespace RazorCountry
                 endpoints.MapRazorPages();
             });
         }
+    }
+}
+```
+
+- Edit Program.cs
+
+```C#
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+// Adding 2 new "usings" for the new CountryContext
+using Microsoft.Extensions.DependencyInjection;
+using RazorCountry.Data;
+
+namespace RazorCountry
+{
+    public class Program
+    {
+        // ************************************************************
+        // New Main method to create Database if it is does not exist yet
+        public static void Main(string[] args)
+        {
+            var host = CreateHostBuilder(args).Build();
+            CreateDbIfNotExists(host);
+            host.Run();
+        }
+
+        // ************************************************************
+        /*public static void Main(string[] args)
+        {
+            CreateHostBuilder(args).Build().Run();
+        }*/
+
+        // Add this static method to call OnModelCreating() in CoutryContext.cs
+        private static void CreateDbIfNotExists(IHost host)
+        {
+            using (var scope = host.Services.CreateScope())
+            {
+                var services = scope.ServiceProvider;
+                var context = services.GetRequiredService<CountryContext>();
+                context.Database.EnsureCreated();
+            }
+        }
+
+        public static IHostBuilder CreateHostBuilder(string[] args) =>
+            Host.CreateDefaultBuilder(args)
+                .ConfigureWebHostDefaults(webBuilder =>
+                {
+                    webBuilder.UseStartup<Startup>();
+                });
     }
 }
 ```
