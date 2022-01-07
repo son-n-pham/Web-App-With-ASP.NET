@@ -1034,5 +1034,43 @@ We can make the link of the resulted page to be better, whose href="./Author/Son
     ```
 - We can also set constraint on the parameter to ensure correct parameter is inserted to avoid our program to be broken. This is done by having **@page /Authors/{fullname: string?}**
 
-#### Redirect
+#### Redirection
 
+To redirect, our method needs to return an object implementing IActionResult interface
+- RedirectToPage is one method. The slash / makes the path relative to **Pages** folder. Without folder, the path will relative to the curren t page. RedirectToPage produces HTTP status code of 302. The below example always redirect the webpage to Pages/Checkout.cshtml
+  ```C#
+  public IActionResult OnPost()
+  {
+    return RedirectToPage("/Checkout");
+  }
+  ```
+
+- Page(): Below are leading our webpage to the same current page.
+  ```C#
+  public IActionResult OnGet()
+  {
+    return Page();
+  }
+  
+  // or
+  
+  public void OnGet() {}
+  ```
+  
+- NotFound() returns to 404-not-found page
+  ```C#
+  public IActionResult OnPost(string username)
+	{
+	  if (username == "Machiavelli")
+	  {
+	    return NotFound();
+	  }
+
+	  return Page();
+	}
+  ```
+  
+- Async redirect. Below syntax is used
+  ```C#
+  public async Task<IActionResult> OnGetAsync() { }
+  ```
