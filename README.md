@@ -1320,4 +1320,4 @@ We then follow the below diagram.
 
 After the delete operation, we can redirect back to Index page of Continents to observe the change.
 
-
+![image](https://user-images.githubusercontent.com/79841341/148642419-dc3a6dc8-9843-4a2a-b2fb-5970bd0cc24e.png)
