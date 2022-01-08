@@ -1321,3 +1321,28 @@ We then follow the below diagram.
 After the delete operation, we can redirect back to Index page of Continents to observe the change.
 
 ![image](https://user-images.githubusercontent.com/79841341/148642419-dc3a6dc8-9843-4a2a-b2fb-5970bd0cc24e.png)
+
+#### Data Validation
+
+![image](https://user-images.githubusercontent.com/79841341/148646431-ebd305ca-f170-428f-b1d1-55cd1a307ee2.png)
+
+Data Annotation is added in model.
+
+![image](https://user-images.githubusercontent.com/79841341/148646501-152013d6-b7ce-4f1a-a85c-89922e86d9eb.png)
+
+Span is grouped with input of form.
+
+![image](https://user-images.githubusercontent.com/79841341/148646715-8ae6a79a-2a4c-46a3-b8c6-1342019eb06b.png)
+
+Result of validation when invalid data is entered.
+
+![image](https://user-images.githubusercontent.com/79841341/148646762-6ca6fb9f-ac38-4b00-b21b-21d92452de36.png)
+
+#### LINQ
+
+As above, we access data through the EF context using ToListAsync() and FindAsync() methods of a DbSet.
+
+FindAsync() finds a single record by ID. FirstOrDefaultAsync is its replacement, which returns single record matching the lambda expression in the parameter.
+
+
+
