@@ -1294,3 +1294,13 @@ namespace RazorCountry
 
 ![image](https://user-images.githubusercontent.com/79841341/148565406-605c6a9f-5f50-4541-afa2-a68f428d298c.png)
 
+#### Data Edits
+
+- Add the Entity Framework context and inject into the class constructor of the page model
+
+![image](https://user-images.githubusercontent.com/79841341/148641855-756d1d21-14b8-476a-916d-519a20ab527d.png)
+
+We then follow the below diagram.
+
+1. Post
+![image](https://user-images.githubusercontent.com/79841341/148641892-7149d88a-a845-4633-9d3a-12904876ff06.png)
