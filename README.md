@@ -1302,5 +1302,22 @@ namespace RazorCountry
 
 We then follow the below diagram.
 
-1. Post
-![image](https://user-images.githubusercontent.com/79841341/148641892-7149d88a-a845-4633-9d3a-12904876ff06.png)
+![image](https://user-images.githubusercontent.com/79841341/148641915-9716400f-9f1d-4b67-adfa-166fb765eb34.png)
+
+1. POST sent via \<form\> => locate that data in \_context (database)
+
+![image](https://user-images.githubusercontent.com/79841341/148642126-f13798b7-7145-44f8-977b-0d8d55346587.png)
+
+![image](https://user-images.githubusercontent.com/79841341/148642341-4289618e-32c3-453b-9cdc-f6dab93b0908.png)
+
+2. Page Model send data to Context via Add(), Attach() or Remove()
+
+![image](https://user-images.githubusercontent.com/79841341/148642364-6729a086-5589-414e-a83a-31b2b63287a2.png)
+
+3. Context edits database via SaveChangesAsync()
+
+![image](https://user-images.githubusercontent.com/79841341/148642374-7d18597d-17ca-44b6-9fcf-b0f372fe678a.png)
+
+After the delete operation, we can redirect back to Index page of Continents to observe the change.
+
+
